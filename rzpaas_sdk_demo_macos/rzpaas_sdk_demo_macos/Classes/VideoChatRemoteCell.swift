@@ -50,7 +50,6 @@ class VideoChatRemoteCell: NSCollectionViewItem {
     }
     
     
-    
     @IBAction func onClickAudioMuteButton(_ sender: NSButton) {
         guard let item = self.chatItem else {
             return

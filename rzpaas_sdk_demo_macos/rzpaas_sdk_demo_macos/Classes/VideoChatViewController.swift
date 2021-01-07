@@ -64,13 +64,13 @@ class VideoChatViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         self.view.window?.title = "Video Chat"
-        self.view.window?.standardWindowButton(.closeButton)?.target = self
-        self.view.window?.standardWindowButton(.closeButton)?.action = #selector(onClickLeaveChannel(_:))
+        if let closeButton = self.view.window?.standardWindowButton(.closeButton) {
+            closeButton.target = self
+            closeButton.action = #selector(onClickLeaveChannel(sender:))
+        }
     }
     
-
-    
-    @objc func onClickLeaveChannel(_ sender: Any) {
+    @objc func onClickLeaveChannel(sender: Any) {
         self.leaveChannle()
     }
     
@@ -289,7 +289,12 @@ extension VideoChatViewController {
     
     func backToLoginPage() {
         let stroyboard = NSStoryboard.init(name: "Main", bundle: nil)
-        if let loginPage = stroyboard.instantiateController(withIdentifier: "LoginViewController") as? NSViewController {
+        if let loginPage = stroyboard.instantiateController(withIdentifier: "LoginViewController") as? LoginViewController {
+            if let closeButton = self.view.window?.standardWindowButton(.closeButton) {
+                closeButton.target = loginPage
+                closeButton.action = #selector(LoginViewController.onClickClose(sender:))
+            }
+            
             self.view.window?.contentViewController = loginPage
         }
     }

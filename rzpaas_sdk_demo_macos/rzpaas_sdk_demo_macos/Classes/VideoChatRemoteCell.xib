@@ -111,7 +111,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="onClickVideoMuteButton:" target="-2" id="wSj-47-QvK"/>
+                                <action selector="onClickVideoMuteButton:" target="XyX-ea-IIf" id="Uha-fL-DJV"/>
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MWd-fD-fcx">
@@ -121,7 +121,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="onClickAudioMuteButton:" target="-2" id="62n-Sj-5hw"/>
+                                <action selector="onClickAudioMuteButton:" target="XyX-ea-IIf" id="Wdc-Cb-DjN"/>
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fwB-Og-9w6">
@@ -131,7 +131,7 @@
                                 <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
-                                <action selector="onClickSwitchHDButton:" target="-2" id="dDc-GB-aqL"/>
+                                <action selector="onClickSwitchHDButton:" target="XyX-ea-IIf" id="uaj-8x-YjC"/>
                             </connections>
                         </button>
                     </subviews>

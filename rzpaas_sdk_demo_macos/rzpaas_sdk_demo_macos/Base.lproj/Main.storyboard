@@ -689,7 +689,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="1200" height="720"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
                         <value key="minSize" type="size" width="1200" height="720"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -708,11 +708,11 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="XfG-lQ-9wD" customClass="LoginViewController" customModule="rzpaas_sdk_demo_macos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl" customClass="RZMView">
-                        <rect key="frame" x="0.0" y="0.0" width="966" height="550"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1200" height="720"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BQe-yF-8df">
-                                <rect key="frame" x="127" y="233" width="289" height="85"/>
+                                <rect key="frame" x="244" y="318" width="289" height="85"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="RZ Demo" id="yMX-pS-5Le">
                                     <font key="font" metaFont="system" size="72"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -720,7 +720,7 @@
                                 </textFieldCell>
                             </textField>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="jkp-9r-0fA" customClass="RZMView">
-                                <rect key="frame" x="483" y="195" width="1" height="160"/>
+                                <rect key="frame" x="600" y="280" width="1" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="Duj-7m-LIe"/>
                                     <constraint firstAttribute="height" constant="160" id="tNv-d4-pgN"/>
@@ -732,7 +732,7 @@
                                 </userDefinedRuntimeAttributes>
                             </customView>
                             <stackView distribution="equalSpacing" orientation="vertical" alignment="leading" spacing="11" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="645-a4-lcI">
-                                <rect key="frame" x="563" y="190" width="327" height="171"/>
+                                <rect key="frame" x="680" y="275" width="327" height="171"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m7h-MH-kIN">
                                         <rect key="frame" x="0.0" y="115" width="327" height="56"/>

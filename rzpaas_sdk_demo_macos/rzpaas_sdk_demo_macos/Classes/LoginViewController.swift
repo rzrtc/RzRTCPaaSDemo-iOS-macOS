@@ -83,9 +83,13 @@ class LoginViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         self.view.window?.title = "Login"
-        self.view.window?.standardWindowButton(.closeButton)?.target = self
-        self.view.window?.standardWindowButton(.closeButton)?.action = #selector(onClickClose(sender:))
+        if let closeButton = self.view.window?.standardWindowButton(.closeButton) {
+            closeButton.target = self
+            closeButton.action = #selector(onClickClose(sender:))
+        }
     }
+    
+
     
     @objc func onClickClose(sender: Any)  {
         NSApplication.shared.terminate(nil)
@@ -179,8 +183,13 @@ extension LoginViewController: EngineManagerDelegate {
         self.inJoinState = false
         //save channel id
         EngineManager.sharedEngineManager.channelId = channelIdInput.stringValue
+        
         //switch page
         let vc = VideoChatViewController.init()
+        if let closeButton = self.view.window?.standardWindowButton(.closeButton) {
+            closeButton.target = vc
+            closeButton.action = #selector(VideoChatViewController.onClickLeaveChannel(sender:))
+        }
         self.view.window?.contentViewController = vc
     }
     

@@ -104,7 +104,7 @@ class EngineManager: NSObject {
     }
     
     func muteRemoteVideo(uid: String, mute: Bool)  {
-        self.rtcChannel?.muteRemoteVideoStream(uid, streamName: nil, mute: mute)
+        self.rtcChannel?.muteRemoteVideoStream(uid, streamName: "", mute: mute)
     }
     
     func publish() {
@@ -265,7 +265,7 @@ extension EngineManager: RZRtcChannelDelegate {
         
         if state == .noRecv {
             runOnMainThread {
-                self.chatManager.remoteAudioSendStateChange(uid: uid, state: true)
+                self.chatManager.remoteAudioNoReceiveStateChange(uid: uid, mute: true)
             }
             return
         }
@@ -308,7 +308,7 @@ extension EngineManager: RZRtcChannelDelegate {
         
         if state == .noRecv {
             runOnMainThread {
-                self.chatManager.remoteAudioNoReceiveStateChange(uid: uid, mute: true)
+                self.chatManager.remoteVideoNoReceiveStateChange(uid: uid, mute: true)
             }
             return
         }
