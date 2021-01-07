@@ -50,6 +50,12 @@ class EngineManager: NSObject {
         config.codecPriority = .hardware
         config.appId = kAppId
         rtcEngine = RZRtcEngineKit.sharedEngine(with: config, delegate: self)
+        
+        //设置编码参数
+        let encodeConfig = RZVideoEncoderConfiguration.init()
+        encodeConfig.dimensions = RZVideoDimension640x360
+        encodeConfig.frameRate = RZVideoFrameRate.fps15.rawValue
+        rtcEngine.setVideoEncoderConfiguration(encodeConfig)
     }
     
     func createChannel(channelId: String) -> Bool {
@@ -138,6 +144,12 @@ class EngineManager: NSObject {
     func switchDualSteam(uid: String, to high: Bool) {
         let type = high ? RZVideoStreamType.high : RZVideoStreamType.low
         self.rtcChannel?.setRemoteVideoStreamTypeForUser(uid, streamName: nil, streamType: type)
+        /*
+        1. 大小流切换没有回调
+        2. 如果切换失败，会有warning 抛出
+        3. 切换之后，默认切换成功，记录一下状态
+         */
+        self.chatManager.remoteVideoDualStreamChange(uid: uid, high: high)
     }    
 }
 
@@ -344,15 +356,18 @@ extension EngineManager: RZRtcChannelDelegate {
                 runOnMainThread {
                     self.delegate?.shouldHandleKickOff?()
                 }
+                 return
+            }
+            
+            /*
+             重连20分钟没有连上，需要退出频道
+             */
+            runOnMainThread {
+                self.delegate?.shouldHandleServiceStopped?()
             }
             return
         }
-        /*
-         重连20分钟没有连上，需要退出频道
-         */
-        runOnMainThread {
-            self.delegate?.shouldHandleServiceStopped?()
-        }
+
     }
     
     func rtcChannelConnectionDidLost(_ rtcChannel: RZRtcChannel) {

@@ -128,6 +128,16 @@ class VideoChatManager: NSObject {
         item.videoState.noReceive = mute
         self.delegate?.shouldReloadItem?(item: item, at: index)
     }
+    
+    func remoteVideoDualStreamChange(uid: String, high: Bool) {
+        guard let tuple = self.findItemBy(uid: uid) else {
+            return
+        }
+        let item = tuple.0
+        let index = tuple.1
+        item.videoState.isHD = high
+        self.delegate?.shouldReloadItem?(item: item, at: index)
+    }
 }
 
 

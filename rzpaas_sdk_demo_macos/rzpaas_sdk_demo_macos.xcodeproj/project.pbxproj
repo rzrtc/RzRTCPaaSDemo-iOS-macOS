@@ -27,6 +27,7 @@
 		A54D3E1225A47213000B23D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D3E1125A47213000B23D4 /* AppDelegate.swift */; };
 		A54D3E1625A47216000B23D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E1525A47216000B23D4 /* Assets.xcassets */; };
 		A54D3E1925A47216000B23D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E1725A47216000B23D4 /* Main.storyboard */; };
+		F0DB069D35F6B7FBF62C607F /* Pods_rzpaas_sdk_demo_macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C58F64595617F7E22DD4A35 /* Pods_rzpaas_sdk_demo_macos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C58F64595617F7E22DD4A35 /* Pods_rzpaas_sdk_demo_macos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rzpaas_sdk_demo_macos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E2679461D8CB8D3149847A /* Pods-rzpaas_sdk_demo_macos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_macos.release.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_macos/Pods-rzpaas_sdk_demo_macos.release.xcconfig"; sourceTree = "<group>"; };
 		8608260225A5813000675FA0 /* RZPaas_macOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RZPaas_macOS.framework; path = ../sdks/RZPaas_macOS.framework; sourceTree = "<group>"; };
 		8608260825A581E700675FA0 /* VideoChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoChatManager.swift; sourceTree = "<group>"; };
 		8608260A25A5823200675FA0 /* VideoChatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatItem.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 		A54D3E1825A47216000B23D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A54D3E1A25A47216000B23D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A54D3E1B25A47216000B23D4 /* rzpaas_sdk_demo_macos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = rzpaas_sdk_demo_macos.entitlements; sourceTree = "<group>"; };
+		F515F9E467155C176B937754 /* Pods-rzpaas_sdk_demo_macos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rzpaas_sdk_demo_macos.debug.xcconfig"; path = "Target Support Files/Pods-rzpaas_sdk_demo_macos/Pods-rzpaas_sdk_demo_macos.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8608260325A5813000675FA0 /* RZPaas_macOS.framework in Frameworks */,
+				F0DB069D35F6B7FBF62C607F /* Pods_rzpaas_sdk_demo_macos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				8608260225A5813000675FA0 /* RZPaas_macOS.framework */,
+				0C58F64595617F7E22DD4A35 /* Pods_rzpaas_sdk_demo_macos.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -134,6 +140,7 @@
 				A54D3E1025A47213000B23D4 /* rzpaas_sdk_demo_macos */,
 				A54D3E0F25A47213000B23D4 /* Products */,
 				8608260125A5813000675FA0 /* Frameworks */,
+				C83C55AB3E68AF065D0EB058 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -160,6 +167,16 @@
 			path = rzpaas_sdk_demo_macos;
 			sourceTree = "<group>";
 		};
+		C83C55AB3E68AF065D0EB058 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F515F9E467155C176B937754 /* Pods-rzpaas_sdk_demo_macos.debug.xcconfig */,
+				22E2679461D8CB8D3149847A /* Pods-rzpaas_sdk_demo_macos.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A54D3E1E25A47216000B23D4 /* Build configuration list for PBXNativeTarget "rzpaas_sdk_demo_macos" */;
 			buildPhases = (
+				B9C776CC5A4E5639AD0AC4B9 /* [CP] Check Pods Manifest.lock */,
 				A54D3E0A25A47213000B23D4 /* Sources */,
 				A54D3E0B25A47213000B23D4 /* Frameworks */,
 				A54D3E0C25A47213000B23D4 /* Resources */,
@@ -229,6 +247,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9C776CC5A4E5639AD0AC4B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rzpaas_sdk_demo_macos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A54D3E0A25A47213000B23D4 /* Sources */ = {
@@ -315,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -370,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -381,6 +424,7 @@
 		};
 		A54D3E1F25A47216000B23D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F515F9E467155C176B937754 /* Pods-rzpaas_sdk_demo_macos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -406,6 +450,7 @@
 		};
 		A54D3E2025A47216000B23D4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22E2679461D8CB8D3149847A /* Pods-rzpaas_sdk_demo_macos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

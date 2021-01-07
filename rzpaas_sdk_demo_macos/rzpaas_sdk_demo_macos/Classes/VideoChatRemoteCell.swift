@@ -78,11 +78,11 @@ class VideoChatRemoteCell: NSCollectionViewItem {
         item.addCanvsTo(view: self.videoView)
         self.uidLabel.stringValue = "\(item.uid)"
         
-        let audioImageName = item.audioState.remoteNoSend ? "cell_remote_audio_disable" : "cell_remote_audio_enable"
+        let audioImageName = (item.audioState.remoteNoSend || item.audioState.noReceive) ? "cell_remote_audio_disable" : "cell_remote_audio_enable"
         let audioTitle = item.audioState.noReceive ? "关闭" : "开启"
     
         
-        let videoImageName = item.videoState.remoteNoSend ? "cell_video_disable" : "cell_video_enable"
+        let videoImageName = (item.videoState.remoteNoSend || item.videoState.noReceive) ? "cell_video_disable" : "cell_video_enable"
         let videoTitle = item.videoState.noReceive ? "关闭" : "开启"
         
         self.audioMuteButton.image = NSImage.init(named: audioImageName)
