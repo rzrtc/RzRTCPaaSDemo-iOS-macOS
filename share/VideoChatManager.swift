@@ -5,8 +5,15 @@
 //  Created by yxibng on 2021/1/6.
 //
 
+#if os(iOS)
+import UIKit
+import RZPaas_iOS
+#endif
+
+#if os(OSX)
 import Cocoa
 import RZPaas_macOS
+#endif
 
 @objc protocol VideoChatManagerDelegate: NSObjectProtocol {
     

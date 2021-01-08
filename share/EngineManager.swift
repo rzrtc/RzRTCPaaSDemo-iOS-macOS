@@ -5,8 +5,15 @@
 //  Created by yxibng on 2021/1/6.
 //
 
+#if os(iOS)
+import UIKit
+import RZPaas_iOS
+#endif
+
+#if os(OSX)
 import Cocoa
 import RZPaas_macOS
+#endif
 
 func runOnMainThread(_ work: @escaping ()->()) {
     if Thread.isMainThread {
@@ -120,6 +127,8 @@ class EngineManager: NSObject {
     func unpublish()  {
         self.rtcChannel?.unpublish()
     }
+
+#if os(OSX)
     
     func allCameras() -> [RZRtcDeviceInfo] {
         return self.rtcEngine.enumerateDevices(.videoCapture) ?? []
@@ -141,6 +150,16 @@ class EngineManager: NSObject {
         return self.rtcEngine.getDeviceInfo(type)
     }
     
+#endif
+    
+#if os(iOS)
+    
+    func switchCamera() -> Int{
+        return Int(self.rtcEngine.switchCamera())
+    }
+    
+#endif
+
     func switchDualSteam(uid: String, to high: Bool) {
         let type = high ? RZVideoStreamType.high : RZVideoStreamType.low
         self.rtcChannel?.setRemoteVideoStreamTypeForUser(uid, streamName: nil, streamType: type)

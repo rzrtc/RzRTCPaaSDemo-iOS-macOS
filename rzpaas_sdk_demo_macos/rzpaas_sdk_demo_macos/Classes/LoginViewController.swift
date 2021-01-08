@@ -175,6 +175,9 @@ extension LoginViewController: EngineManagerDelegate {
         alert.messageText = "进入频道失败"
         alert.addButton(withTitle: "确定")
         alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
+        
+        //TODO: check
+        EngineManager.sharedEngineManager.destroyChannel()
     }
     
     func shouldHandleJoinSuccess() {

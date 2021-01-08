@@ -5,8 +5,21 @@
 //  Created by yxibng on 2021/1/6.
 //
 
+#if os(iOS)
+import UIKit
+import RZPaas_iOS
+
+typealias VIEW_CLASS = UIView
+#endif
+
+#if os(OSX)
 import Cocoa
 import RZPaas_macOS
+
+typealias VIEW_CLASS = NSView
+#endif
+
+
 
 class VideoChatItem: NSObject {
 
@@ -22,6 +35,8 @@ class VideoChatItem: NSObject {
 
     var uid: String = ""
     var isLocal: Bool = false
+    var isFront:Bool! = true
+    
     
     let audioState = StreamState()
     let videoState = VideoStreamState()
@@ -29,14 +44,14 @@ class VideoChatItem: NSObject {
     //video canvas
     let canvas: RZRtcVideoCanvas = {
         let canvas = RZRtcVideoCanvas.init()
-        canvas.view = NSView.init()
+        canvas.view = VIEW_CLASS.init()
         canvas.mirrorMode = .auto
         canvas.renderMode = .fit
         return canvas
     }()
     
     
-    func addCanvsTo(view: NSView) {
+    func addCanvsTo(view: VIEW_CLASS) {
         self.canvas.view?.removeFromSuperview()
         
         guard let canvasView = self.canvas.view else  {

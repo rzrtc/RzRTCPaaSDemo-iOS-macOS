@@ -7,4 +7,7 @@
    <FileRef
       location = "group:rzpaas_sdk_demo_ios/rzpaas_sdk_demo_ios.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
 </Workspace>
