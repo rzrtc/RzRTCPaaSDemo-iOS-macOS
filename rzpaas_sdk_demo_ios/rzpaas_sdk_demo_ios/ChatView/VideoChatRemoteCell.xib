@@ -29,7 +29,7 @@
                                 <color key="textColor" red="0.81176470590000005" green="0.82745098039999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_default_image" translatesAutoresizingMaskIntoConstraints="NO" id="yb9-pa-PCL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_stream_stop" translatesAutoresizingMaskIntoConstraints="NO" id="yb9-pa-PCL">
                                 <rect key="frame" x="109" y="80" width="24" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="2vj-2j-7bU"/>
@@ -98,7 +98,7 @@
                         </state>
                         <state key="selected" image="camera_close_gray"/>
                         <connections>
-                            <action selector="onClickAudioMuteButton:" destination="Tav-Uw-a1q" eventType="touchUpInside" id="gd9-o8-zWx"/>
+                            <action selector="onClickVideoMuteButton:" destination="Tav-Uw-a1q" eventType="touchUpInside" id="Tnl-rp-qYv"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="im0-63-g3B">
@@ -117,7 +117,7 @@
                             <color key="titleColor" red="0.81176470590000005" green="0.82745098039999998" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                         <connections>
-                            <action selector="onClickVideoMuteButton:" destination="Tav-Uw-a1q" eventType="touchUpInside" id="Zkf-Me-VmG"/>
+                            <action selector="onClickAudioMuteButton:" destination="Tav-Uw-a1q" eventType="touchUpInside" id="4xM-pn-8uG"/>
                         </connections>
                     </button>
                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8W-zA-7XQ">
@@ -162,13 +162,13 @@
             <size key="customSize" width="452" height="314"/>
             <connections>
                 <outlet property="HDBtn" destination="h8W-zA-7XQ" id="GTX-jy-aBW"/>
-                <outlet property="audioMuteButton" destination="im0-63-g3B" id="mBw-jy-JRk"/>
+                <outlet property="audioMuteButton" destination="im0-63-g3B" id="WUF-Q1-Wg6"/>
                 <outlet property="loadingActivity" destination="MyI-Zz-8UP" id="PE2-8f-BmQ"/>
                 <outlet property="stateView" destination="iig-SM-BcT" id="nIW-jC-nt0"/>
                 <outlet property="streamStopTipsImageView" destination="yb9-pa-PCL" id="JSb-Pk-MUl"/>
                 <outlet property="streamStopTipsLabel" destination="zbn-pX-uIR" id="iVU-JG-IlL"/>
                 <outlet property="uidLabel" destination="hVr-L4-ueB" id="1fK-jA-77n"/>
-                <outlet property="videoMuteButton" destination="shT-Sp-lCS" id="Mkq-ox-dnC"/>
+                <outlet property="videoMuteButton" destination="shT-Sp-lCS" id="HAV-OC-XvG"/>
                 <outlet property="videoView" destination="K4f-jD-y7j" id="N1G-gN-NpJ"/>
             </connections>
             <point key="canvasLocation" x="202.17391304347828" y="84.375"/>
@@ -178,7 +178,7 @@
         <image name="audio_remote_unmute" width="16" height="16"/>
         <image name="camera_close_gray" width="16" height="16"/>
         <image name="hd_enable" width="16" height="16"/>
-        <image name="icon_default_image" width="24" height="24"/>
+        <image name="icon_stream_stop" width="24" height="24"/>
         <image name="video_remote_unmute" width="16" height="16"/>
     </resources>
 </document>

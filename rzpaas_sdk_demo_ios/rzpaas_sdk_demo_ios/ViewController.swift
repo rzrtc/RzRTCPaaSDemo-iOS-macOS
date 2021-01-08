@@ -167,7 +167,15 @@ extension ViewController: EngineManagerDelegate {
         self.navigationController?.pushViewController(channelViewController, animated: true)
     }
     
-    func shouldHandleJoinError(code: Int, message: String?) {
+    func shouldHandleJoinError(code: Int, message: String?) {        
+        /*
+         1. 频道ID合法，频道创建成功，
+         2. 进频道uid合法，进入成功
+         2. 连接调度服务器失败
+         3. 调用leave channel
+         4. 收到on leave success 的通知， 销毁channel
+         */
+
         self.inJoinState = false
         EngineManager.sharedEngineManager.leaveChannel()
         

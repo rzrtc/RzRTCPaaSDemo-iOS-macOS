@@ -63,20 +63,37 @@ class VideoChatRemoteCell: UICollectionViewCell {
         
         self.videoMuteButton.setImage(UIImage.init(named: videoImageName), for: UIControl.State.normal)
         self.videoMuteButton.setTitle(videoTitle, for: UIControl.State.normal)
-        
-        
-        if item.videoState.noReceive || item.videoState.remoteNoSend {
-            
+                
+        if item.videoState.online == false {
             self.videoView.isHidden = true
             self.stateView.isHidden = false
             
-            //            self.remoteNoSendTipLabel.isHidden = !item.videoState.remoteNoSend
-            //            self.noReceiveTipLabel.isHidden = !item.videoState.noReceive
-        } else {
-            self.videoView.isHidden = false
-            self.stateView.isHidden = true
+            self.loadingActivity.isHidden = false
+            self.loadingActivity.startAnimating()
+            self.streamStopTipsImageView.isHidden = true
+            self.streamStopTipsLabel.text = "加载中"
         }
-        
+        else {
+            if item.videoState.noReceive {
+                
+                self.videoView.isHidden = true
+                self.stateView.isHidden = false
+                
+                self.loadingActivity.isHidden = true
+                self.loadingActivity.stopAnimating()
+                self.streamStopTipsImageView.isHidden = false
+                self.streamStopTipsLabel.text = "本地停止拉流"
+            }
+            else {
+                self.videoView.isHidden = false
+                self.stateView.isHidden = true
+                
+                self.loadingActivity.isHidden = true
+                self.loadingActivity.stopAnimating()
+                self.streamStopTipsImageView.isHidden = true
+                self.streamStopTipsLabel.text = ""
+            }
+        }
     }
     
     

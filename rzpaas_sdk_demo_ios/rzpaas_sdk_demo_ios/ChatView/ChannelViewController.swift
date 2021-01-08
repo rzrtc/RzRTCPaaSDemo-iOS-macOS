@@ -31,7 +31,7 @@ class ChannelViewController: UIViewController{
             
             let layout:UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
             let cellWidth = (UIScreen.main.bounds.size.width-2*3)/2.0
-            layout.itemSize = CGSize.init(width: cellWidth, height: cellWidth)
+            layout.itemSize = CGSize.init(width: cellWidth, height: 140.0)
             layout.minimumLineSpacing = 2;
             layout.minimumInteritemSpacing = 2;
             layout.sectionInset = UIEdgeInsets.init(top: 2, left: 2, bottom: 2, right: 2)
@@ -54,6 +54,9 @@ class ChannelViewController: UIViewController{
         engineManager.enableLocalVideo(enable: true)
         engineManager.publish()
         
+        /*
+         设置本地用户的视频容器
+         */
         engineManager.setupLocalVideoCanvas(engineManager.chatManager.localItem.canvas)
         
         self.channelIdLabel.text = "频道ID: \(engineManager.channelId ?? "")"
@@ -207,7 +210,6 @@ extension ChannelViewController:EngineManagerDelegate {
         let message = ""
         let btnTitle = "确定"
         RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
-            self.leaveChannle()
         }
     }
     
@@ -229,15 +231,10 @@ extension ChannelViewController:VideoChatManagerDelegate {
     }
     
     func videoOnlineStateChange(item: VideoChatItem, at Index: NSInteger, online: Bool) {
-        if !online {
+        if !online || item.isLocal{
             return
         }
-        
-        if item.isLocal {
-            EngineManager.sharedEngineManager.setupLocalVideoCanvas(item.canvas)
-        } else {
-            EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item.canvas)
-        }
+        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item.canvas)
     }
     
     func shouldReloadAll() {
