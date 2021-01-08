@@ -60,9 +60,15 @@ class EngineManager: NSObject {
         
         //设置编码参数
         let encodeConfig = RZVideoEncoderConfiguration.init()
-        encodeConfig.dimensions = RZVideoDimension640x360
+        encodeConfig.dimensions = RZVideoDimension640x480
         encodeConfig.frameRate = RZVideoFrameRate.fps15.rawValue
+        encodeConfig.orientationMode = .fixedLandscape
+        encodeConfig.mirrorMode = .auto
+        
         rtcEngine.setVideoEncoderConfiguration(encodeConfig)
+        rtcEngine.setLocalRenderMode(.fit, mirrorMode: .auto)
+        
+        rtcEngine.enableDualStreamMode(true)
     }
     
     func createChannel(channelId: String) -> Bool {
