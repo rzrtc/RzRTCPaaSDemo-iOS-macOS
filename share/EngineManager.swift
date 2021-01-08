@@ -73,6 +73,10 @@ class EngineManager: NSObject {
     func destroyChannel() {
         self.rtcChannel?.destroy()
         self.rtcChannel = nil
+        /*
+         清理所有的数据
+         */
+        self.chatManager.localLeavel()
     }
     
     func joinChannel(by uid: String) -> Bool {
@@ -310,7 +314,7 @@ extension EngineManager: RZRtcChannelDelegate {
         
         
         if [RZStreamSubscribeState.subscribing,
-            RZStreamSubscribeState.subscribing,
+            RZStreamSubscribeState.subscribed,
             RZStreamSubscribeState.frozen].contains(state) {
             
             runOnMainThread {
@@ -353,7 +357,7 @@ extension EngineManager: RZRtcChannelDelegate {
         
         
         if [RZStreamSubscribeState.subscribing,
-            RZStreamSubscribeState.subscribing,
+            RZStreamSubscribeState.subscribed,
             RZStreamSubscribeState.frozen].contains(state) {
             
             runOnMainThread {

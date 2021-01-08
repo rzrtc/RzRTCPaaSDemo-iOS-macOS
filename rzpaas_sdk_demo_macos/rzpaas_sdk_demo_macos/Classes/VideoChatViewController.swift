@@ -56,6 +56,9 @@ class VideoChatViewController: NSViewController {
         engineManager.enableLocalVideo(enable: true)
         engineManager.publish()
 
+        /*
+         设置本地用户的视频容器
+         */
         engineManager.setupLocalVideoCanvas(engineManager.chatManager.localItem.canvas)
         
         self.channelIdLabel.stringValue = "频道ID: \(engineManager.channelId ?? "")"
@@ -106,16 +109,10 @@ extension VideoChatViewController: VideoChatManagerDelegate {
     
     
     func videoOnlineStateChange(item: VideoChatItem, at Index: NSInteger, online: Bool) {
-        
-        if !online {
+        if !online || item.isLocal{
             return
         }
-        
-        if item.isLocal {
-            EngineManager.sharedEngineManager.setupLocalVideoCanvas(item.canvas)
-        } else {
-            EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item.canvas)
-        }
+        EngineManager.sharedEngineManager.setupRemoteVideoCanvas(item.canvas)
     }
     
     func shouldReloadAll() {

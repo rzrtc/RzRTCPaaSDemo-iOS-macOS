@@ -166,6 +166,12 @@ extension LoginViewController: EngineManagerDelegate {
         alert.messageText = "进入频道失败"
         alert.addButton(withTitle: "确定")
         alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
+        
+        /*
+         1. 频道channelId非法， 创建channel 失败
+         2. 此时不用销毁频道，因为没有创建成功
+         */
+        
     }
     
     func shouldHandleInvalidUid() {
@@ -175,8 +181,11 @@ extension LoginViewController: EngineManagerDelegate {
         alert.messageText = "进入频道失败"
         alert.addButton(withTitle: "确定")
         alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
-        
-        //TODO: check
+        /*
+         1. 频道已经创建成功
+         2. 进频道uid非法
+         3. 销毁创建的频道
+         */
         EngineManager.sharedEngineManager.destroyChannel()
     }
     
@@ -186,7 +195,6 @@ extension LoginViewController: EngineManagerDelegate {
         self.inJoinState = false
         //save channel id
         EngineManager.sharedEngineManager.channelId = channelIdInput.stringValue
-        
         //switch page
         let vc = VideoChatViewController.init()
         if let closeButton = self.view.window?.standardWindowButton(.closeButton) {
@@ -197,6 +205,15 @@ extension LoginViewController: EngineManagerDelegate {
     }
     
     func shouldHandleJoinError(code: Int, message: String?) {
+        
+        /*
+         1. 频道ID合法，频道创建成功，
+         2. 进频道uid合法，进入成功
+         2. 连接调度服务器失败
+         3. 调用leave channel
+         4. 收到on leave success 的通知， 销毁channel
+         */
+        
         self.inJoinState = false
         EngineManager.sharedEngineManager.leaveChannel()
         
