@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,9 @@
 		86B6CA2A25A55B6E00EC3CDF /* RZMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B6CA2925A55B6E00EC3CDF /* RZMView.m */; };
 		86B6CA3625A5642B00EC3CDF /* VideoChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B6CA3425A5642B00EC3CDF /* VideoChatViewController.swift */; };
 		86B6CA3725A5642B00EC3CDF /* VideoChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86B6CA3525A5642B00EC3CDF /* VideoChatViewController.xib */; };
+		A5356E1525A84AE500CB1527 /* RZAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5356E1425A84AE500CB1527 /* RZAlertView.swift */; };
+		A5356E1725A84AFD00CB1527 /* RZAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5356E1625A84AFD00CB1527 /* RZAlertView.xib */; };
+		A5356E1925A84CD900CB1527 /* RZAlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5356E1825A84CD900CB1527 /* RZAlertHelper.swift */; };
 		A54D3E1225A47213000B23D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D3E1125A47213000B23D4 /* AppDelegate.swift */; };
 		A54D3E1625A47216000B23D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E1525A47216000B23D4 /* Assets.xcassets */; };
 		A54D3E1925A47216000B23D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E1725A47216000B23D4 /* Main.storyboard */; };
@@ -61,6 +64,9 @@
 		86B6CA2925A55B6E00EC3CDF /* RZMView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZMView.m; sourceTree = "<group>"; };
 		86B6CA3425A5642B00EC3CDF /* VideoChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoChatViewController.swift; sourceTree = "<group>"; };
 		86B6CA3525A5642B00EC3CDF /* VideoChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoChatViewController.xib; sourceTree = "<group>"; };
+		A5356E1425A84AE500CB1527 /* RZAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RZAlertView.swift; sourceTree = "<group>"; };
+		A5356E1625A84AFD00CB1527 /* RZAlertView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RZAlertView.xib; sourceTree = "<group>"; };
+		A5356E1825A84CD900CB1527 /* RZAlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RZAlertHelper.swift; sourceTree = "<group>"; };
 		A54D3E0E25A47213000B23D4 /* rzpaas_sdk_demo_macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rzpaas_sdk_demo_macos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A54D3E1125A47213000B23D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A54D3E1525A47216000B23D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +124,9 @@
 				866DB28125A5682600C360C5 /* VideoChatRemoteCell.xib */,
 				865CB33525A6A53E005E4621 /* DeviceListViewController.swift */,
 				865CB33625A6A53E005E4621 /* DeviceListViewController.xib */,
+				A5356E1425A84AE500CB1527 /* RZAlertView.swift */,
+				A5356E1625A84AFD00CB1527 /* RZAlertView.xib */,
+				A5356E1825A84CD900CB1527 /* RZAlertHelper.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -190,6 +199,7 @@
 				A54D3E0B25A47213000B23D4 /* Frameworks */,
 				A54D3E0C25A47213000B23D4 /* Resources */,
 				8608260525A5813000675FA0 /* Embed Frameworks */,
+				89E8D1DCF1FC3A84C6FA62D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -241,6 +251,7 @@
 				866DB28325A5682600C360C5 /* VideoChatRemoteCell.xib in Resources */,
 				86B6CA3725A5642B00EC3CDF /* VideoChatViewController.xib in Resources */,
 				866DB27E25A5681500C360C5 /* VideoChatLocalCell.xib in Resources */,
+				A5356E1725A84AFD00CB1527 /* RZAlertView.xib in Resources */,
 				A54D3E1625A47216000B23D4 /* Assets.xcassets in Resources */,
 				865CB33825A6A53E005E4621 /* DeviceListViewController.xib in Resources */,
 				A54D3E1925A47216000B23D4 /* Main.storyboard in Resources */,
@@ -250,6 +261,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		89E8D1DCF1FC3A84C6FA62D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rzpaas_sdk_demo_macos/Pods-rzpaas_sdk_demo_macos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rzpaas_sdk_demo_macos/Pods-rzpaas_sdk_demo_macos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rzpaas_sdk_demo_macos/Pods-rzpaas_sdk_demo_macos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B9C776CC5A4E5639AD0AC4B9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5356E1925A84CD900CB1527 /* RZAlertHelper.swift in Sources */,
 				86B6CA3625A5642B00EC3CDF /* VideoChatViewController.swift in Sources */,
 				866DB27D25A5681500C360C5 /* VideoChatLocalCell.swift in Sources */,
 				86B6CA2A25A55B6E00EC3CDF /* RZMView.m in Sources */,
@@ -288,6 +317,7 @@
 				865CB33725A6A53E005E4621 /* DeviceListViewController.swift in Sources */,
 				A5588A5625A7127B0046EE2C /* VideoChatItem.swift in Sources */,
 				A54D3E1225A47213000B23D4 /* AppDelegate.swift in Sources */,
+				A5356E1525A84AE500CB1527 /* RZAlertView.swift in Sources */,
 				86B6CA2325A54EBB00EC3CDF /* NSColor+Extention.swift in Sources */,
 				A5588A5725A7127B0046EE2C /* EngineManager.swift in Sources */,
 				866DB28225A5682600C360C5 /* VideoChatRemoteCell.swift in Sources */,
@@ -437,7 +467,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = VB8MVMJBU4;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../sdks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../sdks",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit-macOS\"",
+				);
 				INFOPLIST_FILE = rzpaas_sdk_demo_macos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,7 +497,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = VB8MVMJBU4;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../sdks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../sdks",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit-macOS\"",
+				);
 				INFOPLIST_FILE = rzpaas_sdk_demo_macos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -160,33 +160,48 @@ extension LoginViewController: EngineManagerDelegate {
     
     func shouldHandleInvalidChannelId() {
         
-        let alert = NSAlert.init()
-        alert.alertStyle = .warning
-        alert.informativeText = "当前频道ID不合法"
-        alert.messageText = "进入频道失败"
-        alert.addButton(withTitle: "确定")
-        alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
+//        let alert = NSAlert.init()
+//        alert.alertStyle = .warning
+//        alert.informativeText = "当前频道ID不合法"
+//        alert.messageText = "进入频道失败"
+//        alert.addButton(withTitle: "确定")
+//        alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
         
         /*
          1. 频道channelId非法， 创建channel 失败
          2. 此时不用销毁频道，因为没有创建成功
          */
         
+        let title = "进入频道失败"
+        let message = "当前频道ID不合法"
+        let btnTitle = "确定"
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        }
+
     }
     
     func shouldHandleInvalidUid() {
-        let alert = NSAlert.init()
-        alert.alertStyle = .warning
-        alert.informativeText = "当前用户ID不合法"
-        alert.messageText = "进入频道失败"
-        alert.addButton(withTitle: "确定")
-        alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
-        /*
-         1. 频道已经创建成功
-         2. 进频道uid非法
-         3. 销毁创建的频道
-         */
-        EngineManager.sharedEngineManager.destroyChannel()
+//        let alert = NSAlert.init()
+//        alert.alertStyle = .warning
+//        alert.informativeText = "当前用户ID不合法"
+//        alert.messageText = "进入频道失败"
+//        alert.addButton(withTitle: "确定")
+//        alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
+//        /*
+//         1. 频道已经创建成功
+//         2. 进频道uid非法
+//         3. 销毁创建的频道
+//         */
+//        EngineManager.sharedEngineManager.destroyChannel()
+        
+        
+        let title = "进入频道失败"
+        let message = "当前用户ID不合法"
+        let btnTitle = "确定"
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+            EngineManager.sharedEngineManager.destroyChannel()
+        }
+
     }
     
     func shouldHandleJoinSuccess() {
@@ -217,12 +232,11 @@ extension LoginViewController: EngineManagerDelegate {
         self.inJoinState = false
         EngineManager.sharedEngineManager.leaveChannel()
         
-        let alert = NSAlert.init()
-        alert.alertStyle = .warning
-        alert.informativeText = "\(message ?? "") \n错误码\(code)"
-        alert.messageText = "进入频道失败"
-        alert.addButton(withTitle: "确定")
-        alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
+        let title = "进入频道失败"
+        let message = "\(message ?? "") \n错误码\(code)"
+        let btnTitle = "确定"
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        }
     }
     
     func shouldHandleOnLeaveChannleSuccess() {

@@ -167,47 +167,37 @@ extension VideoChatViewController: EngineManagerDelegate {
         //set kickoff flag
         self.isKickedOff = true
         
-        let alert = NSAlert.init()
-        alert.alertStyle = .warning
-        alert.informativeText = "检测到你在其他设备登录\n请返回登录后重试"
-        alert.messageText = "已断开连接"
-        alert.addButton(withTitle: "返回登录页面")
-        alert.addButton(withTitle: "取消")
-        alert.beginSheetModal(for: self.view.window!) { (response) in
-            if response == .alertFirstButtonReturn {
-                /*
-                 1. 此时不需要再调用leave channle
-                 2. 释放资源
-                 3. 直接退出
-                 */
-                self.quitAfterKickoff()
-            }
+        let title = "已断开连接"
+        let message = "检测到你在其他设备登录\n请返回登录后重试"
+        let btnTitle = "返回登录页面"
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+            /*
+             1. 此时不需要再调用leave channle
+             2. 释放资源
+             3. 直接退出
+             */
+            self.quitAfterKickoff()
         }
     }
     func shouldHandleConnectLost() {
-        let alert = NSAlert.init()
-        alert.alertStyle = .warning
-        alert.informativeText = "网络连接丢失"
-        alert.messageText = "已断开连接"
-        alert.addButton(withTitle: "返回登录页面")
-        alert.addButton(withTitle: "取消")
-        alert.beginSheetModal(for: self.view.window!) { (response) in
-            if response == .alertFirstButtonReturn {
-                self.leaveChannle()
-            }
+        
+        let title = "已断开连接"
+        let message = "网络连接丢失"
+        let btnTitle = "返回登录页面"
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+            self.leaveChannle()
         }
+        
     }
     func shouldHandleServiceStopped() {
-        let alert = NSAlert.init()
-        alert.alertStyle = .warning
-        alert.informativeText = "服务已停止"
-        alert.messageText = "已断开连接"
-        alert.addButton(withTitle: "返回登录页面")
-        alert.beginSheetModal(for: self.view.window!) { (response) in
-            if response == .alertFirstButtonReturn {
-                self.leaveChannle()
-            }
+
+        let title = "已断开连接"
+        let message = "服务已停止"
+        let btnTitle = "返回登录页面"
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+            self.leaveChannle()
         }
+
     }
     
     func shouldHandleOnLeaveChannleSuccess() {
@@ -220,12 +210,13 @@ extension VideoChatViewController: EngineManagerDelegate {
     }
     
     func shouldHandleSwitchDualStreamFailed(code: Int, message: String?) {
-        let alert = NSAlert.init()
-        alert.alertStyle = .warning
-        alert.informativeText = "code = \(code)\n\(message ?? "")"
-        alert.messageText = "切换大小流失败"
-        alert.addButton(withTitle: "返回登录页面")
-        alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
+
+        let title = "切换大小流失败"
+        let message = ""
+        let btnTitle = "确定"
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        }
+
     }
 }
 
