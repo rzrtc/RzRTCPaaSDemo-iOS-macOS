@@ -140,16 +140,16 @@ extension ViewController {
 extension ViewController: EngineManagerDelegate {
     func shouldHandleInvalidChannelId() {
         
-        let title = "当前频道ID不合法"
-        let message = "进入频道失败"
+        let title = "进入频道失败"
+        let message = "当前频道ID不合法"
         let btnTitle = "确定"
         RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
         }
     }
     
     func shouldHandleInvalidUid() {
-        let title = "当前用户ID不合法"
-        let message = "进入频道失败"
+        let title = "进入频道失败"
+        let message = "当前用户ID不合法"
         let btnTitle = "确定"
         RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
             EngineManager.sharedEngineManager.destroyChannel()
