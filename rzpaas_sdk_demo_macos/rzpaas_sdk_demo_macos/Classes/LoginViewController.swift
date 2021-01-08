@@ -233,7 +233,7 @@ extension LoginViewController: EngineManagerDelegate {
         EngineManager.sharedEngineManager.leaveChannel()
         
         let title = "进入频道失败"
-        let message = "\(message ?? "") \n错误码\(code)"
+        let message = "获取服务器资源失败\n错误码\(code)"
         let btnTitle = "确定"
         RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
         }
