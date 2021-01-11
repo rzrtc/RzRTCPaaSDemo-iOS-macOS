@@ -30,7 +30,7 @@ class VideoChatLocalCell: UICollectionViewCell {
 //            videoView.layer?.backgroundColor = NSColor.init(hex: "929baa")?.cgColor
         }
     }
-    
+        
     weak var item: VideoChatItem?
     func configWith(item: VideoChatItem) {
         self.item = item

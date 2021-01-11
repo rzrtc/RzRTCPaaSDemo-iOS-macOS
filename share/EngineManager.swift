@@ -226,6 +226,9 @@ extension EngineManager: RZRtcEngineDelegate {
             print("local video stoped")
             if error == .deviceNoPermission {
                 print("error, local video has no permission to start")
+                runOnMainThread {
+                    self.delegate?.shouldHandleDeviceNoPermission?()
+                }
             }
         case .capturing:
             print("local video start recording")

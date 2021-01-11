@@ -17,7 +17,7 @@ class RZAlertHelper: NSObject {
         backgroundView.isMaskView = true
         backgroundView.layer?.backgroundColor = NSColor.init(red: 56.0/255.0, green: 69.0/255.0, blue: 63.0/255.0, alpha: 0.4).cgColor
                         
-        guard let window = NSApplication.shared.keyWindow?.contentView else {
+        guard let window = NSApplication.shared.windows[0].contentView else {
             return
         }
         
