@@ -120,6 +120,7 @@
             <size key="customSize" width="452" height="314"/>
             <connections>
                 <outlet property="cameraSwitchBtn" destination="V6X-Z8-5no" id="RPE-1n-Odx"/>
+                <outlet property="idContainerView" destination="Y2n-Kb-tV3" id="JyK-Vv-8bQ"/>
                 <outlet property="stateView" destination="Obg-Wy-CCR" id="sg1-zR-KgR"/>
                 <outlet property="uidLabel" destination="x8g-7f-34X" id="ikO-0o-QGC"/>
                 <outlet property="videoView" destination="m8T-R5-ACT" id="HKC-ZD-Uxe"/>

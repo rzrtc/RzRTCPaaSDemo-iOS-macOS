@@ -40,6 +40,17 @@
                         <action selector="onBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="M7Z-fW-god"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDT-jD-8My">
+                    <rect key="frame" x="360" y="4" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="C5i-b3-Rdd"/>
+                        <constraint firstAttribute="height" constant="50" id="epJ-oU-7Ds"/>
+                    </constraints>
+                    <state key="normal" image="alert_close"/>
+                    <connections>
+                        <action selector="onCloseClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="exY-dn-Ire"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -48,14 +59,17 @@
                 <constraint firstItem="kxo-wR-zMM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="5HV-sw-hox"/>
                 <constraint firstItem="kxo-wR-zMM" firstAttribute="top" secondItem="gQZ-xZ-kIw" secondAttribute="bottom" constant="16" id="Ctc-u0-rQK"/>
                 <constraint firstItem="gQZ-xZ-kIw" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="DIS-Fw-GMO"/>
+                <constraint firstItem="YDT-jD-8My" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="4" id="Gcb-Gm-ugi"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="T3h-wm-Rao" secondAttribute="bottom" constant="20" id="cGb-CN-nuy"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kxo-wR-zMM" secondAttribute="trailing" constant="20" id="eja-Z6-QMP"/>
                 <constraint firstItem="gQZ-xZ-kIw" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="hgv-nc-zoo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="YDT-jD-8My" secondAttribute="trailing" constant="4" id="k83-cZ-02A"/>
                 <constraint firstItem="T3h-wm-Rao" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="wbg-GB-f5r"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="checkBtn" destination="T3h-wm-Rao" id="MxQ-jp-CWj"/>
+                <outlet property="closeBtn" destination="YDT-jD-8My" id="yS2-Wz-b0k"/>
                 <outlet property="messageLabel" destination="kxo-wR-zMM" id="wJQ-ln-fjL"/>
                 <outlet property="titleLabel" destination="gQZ-xZ-kIw" id="Kfk-y1-nUh"/>
             </connections>
@@ -63,6 +77,7 @@
         </view>
     </objects>
     <resources>
+        <image name="alert_close" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

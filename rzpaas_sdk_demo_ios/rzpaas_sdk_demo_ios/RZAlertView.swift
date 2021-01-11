@@ -15,9 +15,11 @@ class RZAlertView: UIView {
     
     @IBOutlet weak var checkBtn: UIButton!
     
+    @IBOutlet weak var closeBtn: UIButton!
     
     var btnClick:(()->())?
 
+    var removeClick:(()->())?
     
     func btnClickDefault() {
 
@@ -26,7 +28,9 @@ class RZAlertView: UIView {
     
     @IBAction func onBtnClick(_ sender: Any) {
         (self.btnClick ?? btnClickDefault)()
-        
     }
     
+    @IBAction func onCloseClick(_ sender: Any) {
+        (self.removeClick ?? btnClickDefault)()
+    }
 }

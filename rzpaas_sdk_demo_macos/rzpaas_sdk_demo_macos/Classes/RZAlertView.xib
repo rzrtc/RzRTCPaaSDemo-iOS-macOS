@@ -42,22 +42,42 @@
                         <action selector="onBtnClick:" target="c22-O7-iKe" id="aO0-Uf-W7B"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8vg-En-ABZ">
+                    <rect key="frame" x="426" y="218" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="Dne-Bj-ial"/>
+                        <constraint firstAttribute="height" constant="50" id="F3x-32-uap"/>
+                    </constraints>
+                    <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="alert_close" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="idh-u6-ibz">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onCloseClick:" target="c22-O7-iKe" id="Ysj-u9-opf"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
+                <constraint firstItem="8vg-En-ABZ" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="4" id="Bil-QL-6OF"/>
                 <constraint firstAttribute="bottom" secondItem="ZTi-Sc-pAK" secondAttribute="bottom" constant="20" id="PaA-DP-m37"/>
                 <constraint firstItem="uE4-Rj-shy" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="RYr-XJ-RKU"/>
                 <constraint firstItem="0qa-5E-qdL" firstAttribute="top" secondItem="uE4-Rj-shy" secondAttribute="bottom" constant="16" id="UXJ-hQ-3Ni"/>
                 <constraint firstItem="uE4-Rj-shy" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" constant="20" id="Vit-WY-luv"/>
+                <constraint firstAttribute="trailing" secondItem="8vg-En-ABZ" secondAttribute="trailing" constant="4" id="elk-qh-LKh"/>
                 <constraint firstAttribute="trailing" secondItem="ZTi-Sc-pAK" secondAttribute="trailing" constant="20" id="quZ-mJ-hWm"/>
                 <constraint firstItem="ZTi-Sc-pAK" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="uhY-oV-yMt"/>
                 <constraint firstItem="0qa-5E-qdL" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" constant="20" id="zCq-nZ-haI"/>
             </constraints>
             <connections>
                 <outlet property="checkBtn" destination="ZTi-Sc-pAK" id="jQu-Q1-OWZ"/>
+                <outlet property="closeBtn" destination="8vg-En-ABZ" id="3Ct-me-Lsg"/>
                 <outlet property="messageLabel" destination="0qa-5E-qdL" id="dQJ-cr-YXy"/>
                 <outlet property="titleLabel" destination="uE4-Rj-shy" id="Bq2-Jz-Kv7"/>
             </connections>
             <point key="canvasLocation" x="-100" y="154"/>
         </customView>
     </objects>
+    <resources>
+        <image name="alert_close" width="20" height="20"/>
+    </resources>
 </document>

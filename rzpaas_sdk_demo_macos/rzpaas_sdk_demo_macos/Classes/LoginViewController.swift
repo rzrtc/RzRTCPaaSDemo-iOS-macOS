@@ -175,7 +175,7 @@ extension LoginViewController: EngineManagerDelegate {
         let title = "进入频道失败"
         let message = "当前频道ID不合法"
         let btnTitle = "确定"
-        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle, hiddenClose: true) {
         }
 
     }
@@ -198,7 +198,7 @@ extension LoginViewController: EngineManagerDelegate {
         let title = "进入频道失败"
         let message = "当前用户ID不合法"
         let btnTitle = "确定"
-        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle, hiddenClose: true) {
             EngineManager.sharedEngineManager.destroyChannel()
         }
 
@@ -235,7 +235,7 @@ extension LoginViewController: EngineManagerDelegate {
         let title = "进入频道失败"
         let message = "获取服务器资源失败\n错误码\(code)"
         let btnTitle = "确定"
-        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle, hiddenClose: true) {
         }
     }
     

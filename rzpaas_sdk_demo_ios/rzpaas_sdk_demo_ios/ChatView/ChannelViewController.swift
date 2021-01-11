@@ -164,7 +164,7 @@ extension ChannelViewController:EngineManagerDelegate {
         let title = "已断开连接"
         let message = "检测到你在其他设备登录\n请返回登录后重试"
         let btnTitle = "返回登录页面"
-        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle, hiddenClose: false) {
             /*
              1. 此时不需要再调用leave channle
              2. 释放资源
@@ -180,7 +180,7 @@ extension ChannelViewController:EngineManagerDelegate {
         let title = "已断开连接"
         let message = "网络连接丢失"
         let btnTitle = "返回登录页面"
-        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle, hiddenClose: false) {
             self.leaveChannle()
         }
         
@@ -190,7 +190,7 @@ extension ChannelViewController:EngineManagerDelegate {
         let title = "已断开连接"
         let message = "服务已停止"
         let btnTitle = "返回登录页面"
-        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle, hiddenClose: false) {
             self.leaveChannle()
         }
     }
@@ -209,7 +209,7 @@ extension ChannelViewController:EngineManagerDelegate {
         let title = "切换大小流失败"
         let message = ""
         let btnTitle = "确定"
-        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle, hiddenClose: false) {
         }
     }
     
@@ -217,7 +217,7 @@ extension ChannelViewController:EngineManagerDelegate {
         let title = "提示"
         let message = "需要摄像头麦克风权限"
         let btnTitle = "确定"
-        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle, hiddenClose: true) {
             self.leaveChannle()
         }
     }

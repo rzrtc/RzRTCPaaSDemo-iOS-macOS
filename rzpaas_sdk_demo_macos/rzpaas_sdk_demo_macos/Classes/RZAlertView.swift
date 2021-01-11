@@ -12,9 +12,11 @@ class RZAlertView: NSView {
     @IBOutlet weak var titleLabel: NSTextField!
     @IBOutlet weak var messageLabel: NSTextField!
     @IBOutlet weak var checkBtn: NSButton!
-    
+    @IBOutlet weak var closeBtn: NSButton!
+
     var btnClick:(()->())?
-    
+    var removeClick:(()->())?
+
     func btnClickDefault() {
         
     }
@@ -22,7 +24,10 @@ class RZAlertView: NSView {
     @IBAction func onBtnClick(_ sender: Any) {
         (self.btnClick ?? btnClickDefault)()
     }
-    
+    @IBAction func onCloseClick(_ sender: Any) {
+        (self.removeClick ?? btnClickDefault)()
+    }
+
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 

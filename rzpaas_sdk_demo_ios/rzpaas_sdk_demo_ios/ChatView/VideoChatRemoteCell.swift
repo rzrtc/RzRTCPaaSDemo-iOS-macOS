@@ -26,6 +26,7 @@ class VideoChatRemoteCell: UICollectionViewCell {
     
     // 用户ID 展示
     @IBOutlet weak var uidLabel: UILabel!
+    @IBOutlet weak var idContainerView: UIView!
     
     // 流加载状态展示
     @IBOutlet weak var streamStopTipsLabel: UILabel!
@@ -100,6 +101,14 @@ class VideoChatRemoteCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.idContainerView.layer.cornerRadius = 10.0
+        self.idContainerView.layer.masksToBounds = true
+        self.videoMuteButton.layer.cornerRadius = 12.0
+        self.videoMuteButton.layer.masksToBounds = true
+        self.audioMuteButton.layer.cornerRadius = 12.0
+        self.audioMuteButton.layer.masksToBounds = true
+        self.HDBtn.layer.cornerRadius = 12.0
+        self.HDBtn.layer.masksToBounds = true
     }
     
     @IBAction func onClickAudioMuteButton(_ sender: UIButton) {

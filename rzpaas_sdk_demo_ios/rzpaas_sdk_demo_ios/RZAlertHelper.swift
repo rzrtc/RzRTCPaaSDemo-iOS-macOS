@@ -14,7 +14,7 @@ class RZAlertHelper: NSObject {
     static let shared = RZAlertHelper.init()
     
     
-    func presentAlert(title:String, message:String, btnTitle:String, callBack:@escaping ()->Void) {
+    func presentAlert(title:String, message:String, btnTitle:String, hiddenClose:Bool ,callBack:@escaping ()->Void) {
         
         let backgroundView = UIView.init()
         backgroundView.backgroundColor = UIColor.init(red: 56.0/255.0, green: 69.0/255.0, blue: 63.0/255.0, alpha: 0.4)
@@ -51,6 +51,13 @@ class RZAlertHelper: NSObject {
         alert.btnClick = {
             callBack()
             backgroundView.removeFromSuperview()
+        }
+        alert.removeClick = {
+            backgroundView.removeFromSuperview()
+        }
+        
+        if hiddenClose {
+            alert.closeBtn.isHidden = hiddenClose
         }
         
         backgroundView.addSubview(alert)

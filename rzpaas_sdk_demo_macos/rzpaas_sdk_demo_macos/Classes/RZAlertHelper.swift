@@ -11,7 +11,7 @@ import SnapKit
 class RZAlertHelper: NSObject {
     static let shared = RZAlertHelper.init()
     
-    func presentAlert(title:String, message:String, btnTitle:String, callBack:@escaping ()->Void) {
+    func presentAlert(title:String, message:String, btnTitle:String, hiddenClose:Bool, callBack:@escaping ()->Void) {
         
         let backgroundView = RZMView.init()
         backgroundView.isMaskView = true
@@ -54,7 +54,14 @@ class RZAlertHelper: NSObject {
             callBack()
             backgroundView.removeFromSuperview()
         }
+        alert.removeClick = {
+            backgroundView.removeFromSuperview()
+        }
         
+        if hiddenClose {
+            alert.closeBtn.isHidden = hiddenClose
+        }
+
         backgroundView.addSubview(alert)
         alert.snp.makeConstraints { (make) in
             make.width.equalTo(240)

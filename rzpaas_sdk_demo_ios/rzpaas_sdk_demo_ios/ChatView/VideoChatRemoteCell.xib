@@ -163,6 +163,7 @@
             <connections>
                 <outlet property="HDBtn" destination="h8W-zA-7XQ" id="GTX-jy-aBW"/>
                 <outlet property="audioMuteButton" destination="im0-63-g3B" id="WUF-Q1-Wg6"/>
+                <outlet property="idContainerView" destination="zf1-ce-Fd4" id="yy2-nV-zXd"/>
                 <outlet property="loadingActivity" destination="MyI-Zz-8UP" id="PE2-8f-BmQ"/>
                 <outlet property="stateView" destination="iig-SM-BcT" id="nIW-jC-nt0"/>
                 <outlet property="streamStopTipsImageView" destination="yb9-pa-PCL" id="JSb-Pk-MUl"/>

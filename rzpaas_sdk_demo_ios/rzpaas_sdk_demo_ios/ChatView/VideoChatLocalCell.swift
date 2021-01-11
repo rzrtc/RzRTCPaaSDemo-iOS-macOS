@@ -12,6 +12,7 @@ class VideoChatLocalCell: UICollectionViewCell {
     
     // 用户ID 展示
     @IBOutlet weak var uidLabel: UILabel!
+    @IBOutlet weak var idContainerView: UIView!
 
 //    // 流加载状态展示
 //    @IBOutlet weak var streamStopTipsLabel: UILabel!
@@ -59,4 +60,14 @@ class VideoChatLocalCell: UICollectionViewCell {
             self.cameraSwitchBtn.setTitle(title, for: .normal)
         }
     }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        idContainerView.layer.cornerRadius = 10.0
+        idContainerView.layer.masksToBounds = true
+        cameraSwitchBtn.layer.cornerRadius = 12.0
+        cameraSwitchBtn.layer.masksToBounds = true
+    }
+    
 }
