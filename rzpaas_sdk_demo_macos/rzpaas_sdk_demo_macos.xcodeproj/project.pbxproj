@@ -465,7 +465,7 @@
 				CODE_SIGN_ENTITLEMENTS = rzpaas_sdk_demo_macos/rzpaas_sdk_demo_macos.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = VB8MVMJBU4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/../sdks",
@@ -495,7 +495,7 @@
 				CODE_SIGN_ENTITLEMENTS = rzpaas_sdk_demo_macos/rzpaas_sdk_demo_macos.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = VB8MVMJBU4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SRCROOT)/../sdks",

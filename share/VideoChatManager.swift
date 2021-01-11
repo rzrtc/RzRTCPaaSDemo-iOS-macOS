@@ -38,14 +38,14 @@ class VideoChatManager: NSObject {
     
     var chatItems: [VideoChatItem] = []
     
-    let localItem: VideoChatItem = {
-        let item = VideoChatItem.init()
-        item.isLocal = true
-        return item
-    }()
+    var localItem: VideoChatItem!
     
     func localJoin(uid: String) {
+        
+        localItem = VideoChatItem.init()
+        localItem.isLocal = true
         localItem.uid = uid
+        
         if self.chatItems.contains(localItem) {
             return
         }
@@ -57,6 +57,7 @@ class VideoChatManager: NSObject {
      清理所有的数据
      */
     func localLeavel() {
+        localItem = nil;
         self.chatItems.removeAll()
         self.delegate?.shouldReloadAll?()
     }
