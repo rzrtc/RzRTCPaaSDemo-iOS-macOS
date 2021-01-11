@@ -213,6 +213,14 @@ extension ChannelViewController:EngineManagerDelegate {
         }
     }
     
+    func shouldHandleDeviceNoPermission() {
+        let title = "提示"
+        let message = "需要摄像头麦克风权限"
+        let btnTitle = "确定"
+        RZAlertHelper.shared.presentAlert(title: title, message: message, btnTitle: btnTitle) {
+            self.leaveChannle()
+        }
+    }
 }
 
 

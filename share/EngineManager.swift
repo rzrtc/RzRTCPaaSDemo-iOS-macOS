@@ -35,6 +35,7 @@ func runOnMainThread(_ work: @escaping ()->()) {
     @objc optional func shouldHandleServiceStopped()
     @objc optional func shouldHandleOnLeaveChannleSuccess()
     @objc optional func shouldHandleSwitchDualStreamFailed(code: Int, message: String?)
+    @objc optional func shouldHandleDeviceNoPermission()
 }
 
 
@@ -203,6 +204,9 @@ extension EngineManager: RZRtcEngineDelegate {
             print("local audio stoped")
             if error == .deviceNoPermission {
                 print("error, local audio has no permission to start")
+                runOnMainThread {
+                    self.delegate?.shouldHandleDeviceNoPermission?()
+                }
             }
         case .recording:
             print("local audio start recording")
