@@ -278,9 +278,11 @@ extension VideoChatViewController {
     func destroyChannleAndReturn() {
         /*
          1. 销毁频道
-         2. 离开页面
+         2. 本地预览设置为空
+         3. 离开页面
          */
         EngineManager.sharedEngineManager.destroyChannel()
+        EngineManager.sharedEngineManager.setupLocalVideoCanvas(.init())
         self.backToLoginPage()
     }
     
