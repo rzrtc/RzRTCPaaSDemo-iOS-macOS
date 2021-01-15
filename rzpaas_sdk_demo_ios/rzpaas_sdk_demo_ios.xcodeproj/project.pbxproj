@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,8 +16,6 @@
 		A54D3DF825A47180000B23D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54D3DF625A47180000B23D4 /* Main.storyboard */; };
 		A54D3DFA25A47183000B23D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A54D3DF925A47183000B23D4 /* Assets.xcassets */; };
 		A54D3DFD25A47183000B23D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54D3DFB25A47183000B23D4 /* LaunchScreen.storyboard */; };
-		A54D3E2925A54962000B23D4 /* RZPaas_iOS.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54D3E2825A54962000B23D4 /* RZPaas_iOS.xcframework */; };
-		A54D3E2A25A54962000B23D4 /* RZPaas_iOS.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A54D3E2825A54962000B23D4 /* RZPaas_iOS.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A54D3E9425A59457000B23D4 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54D3E9225A59457000B23D4 /* ChannelViewController.swift */; };
 		A54D3E9525A59457000B23D4 /* ChannelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A54D3E9325A59457000B23D4 /* ChannelViewController.xib */; };
 		A5588A5E25A712A90046EE2C /* VideoChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5588A5A25A712A90046EE2C /* VideoChatManager.swift */; };
@@ -29,20 +27,6 @@
 		A5AB7AA025A7F912006CF0B6 /* RZAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5AB7A9F25A7F912006CF0B6 /* RZAlertView.xib */; };
 		EC3B2F070E66B3E74397C93E /* Pods_rzpaas_sdk_demo_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B87D4106A52C9E2173E6C9B /* Pods_rzpaas_sdk_demo_ios.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		A54D3E2B25A54962000B23D4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A54D3E2A25A54962000B23D4 /* RZPaas_iOS.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B87D4106A52C9E2173E6C9B /* Pods_rzpaas_sdk_demo_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rzpaas_sdk_demo_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +60,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A54D3E2925A54962000B23D4 /* RZPaas_iOS.xcframework in Frameworks */,
 				EC3B2F070E66B3E74397C93E /* Pods_rzpaas_sdk_demo_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,7 +158,6 @@
 				A54D3DE925A47180000B23D4 /* Sources */,
 				A54D3DEA25A47180000B23D4 /* Frameworks */,
 				A54D3DEB25A47180000B23D4 /* Resources */,
-				A54D3E2B25A54962000B23D4 /* Embed Frameworks */,
 				A95043E2B69EF28BB073F337 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (

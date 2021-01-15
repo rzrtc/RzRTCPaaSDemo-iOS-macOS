@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8608260325A5813000675FA0 /* RZPaas_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8608260225A5813000675FA0 /* RZPaas_macOS.framework */; };
-		8608260425A5813000675FA0 /* RZPaas_macOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8608260225A5813000675FA0 /* RZPaas_macOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		865CB33725A6A53E005E4621 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865CB33525A6A53E005E4621 /* DeviceListViewController.swift */; };
 		865CB33825A6A53E005E4621 /* DeviceListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 865CB33625A6A53E005E4621 /* DeviceListViewController.xib */; };
 		866DB27D25A5681500C360C5 /* VideoChatLocalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866DB27B25A5681500C360C5 /* VideoChatLocalCell.swift */; };
@@ -32,20 +30,6 @@
 		A5588A5825A7127B0046EE2C /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5588A5425A7127B0046EE2C /* KeyCenter.swift */; };
 		F0DB069D35F6B7FBF62C607F /* Pods_rzpaas_sdk_demo_macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C58F64595617F7E22DD4A35 /* Pods_rzpaas_sdk_demo_macos.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		8608260525A5813000675FA0 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8608260425A5813000675FA0 /* RZPaas_macOS.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C58F64595617F7E22DD4A35 /* Pods_rzpaas_sdk_demo_macos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rzpaas_sdk_demo_macos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,7 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8608260325A5813000675FA0 /* RZPaas_macOS.framework in Frameworks */,
 				F0DB069D35F6B7FBF62C607F /* Pods_rzpaas_sdk_demo_macos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,7 +181,6 @@
 				A54D3E0A25A47213000B23D4 /* Sources */,
 				A54D3E0B25A47213000B23D4 /* Frameworks */,
 				A54D3E0C25A47213000B23D4 /* Resources */,
-				8608260525A5813000675FA0 /* Embed Frameworks */,
 				89E8D1DCF1FC3A84C6FA62D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -467,10 +449,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = VB8MVMJBU4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../sdks",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit-macOS\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = rzpaas_sdk_demo_macos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -497,10 +476,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = VB8MVMJBU4;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SRCROOT)/../sdks",
-					"\"${PODS_CONFIGURATION_BUILD_DIR}/SnapKit-macOS\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = rzpaas_sdk_demo_macos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
