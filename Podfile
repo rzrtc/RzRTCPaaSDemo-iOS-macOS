@@ -20,4 +20,4 @@ target 'rzpaas_sdk_demo_macos' do
     project 'rzpaas_sdk_demo_macos/rzpaas_sdk_demo_macos'
     pod 'SnapKit', '~> 5.0.0'
     pod 'RZPaas_macOS', '~> 1.7.1'
-nd
+end
